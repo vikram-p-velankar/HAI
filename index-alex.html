@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ping Ngrok Server</title>
+</head>
+<body>
+    <div>
+    <h1>Ping Ngrok Server</h1>
+      <form action="javascript:getData()"> <!-- Replace with your Ngrok URL -->
+        <input type="text" id="input">
+        <button type="submit" value="submit">Ping Server</button>
+    </form>
+    <script>
+    async function getData() {
+        const input = document.getElementById("input").value; 
+        alert(input);
+        if(input.length = 0){
+          alert.(the);
+        }
+        const outputDiv = document.getElementById("output").value;
+
+        const url = "https://f2d0-141-215-206-98.ngrok-free.app/hello";
+        try {
+          const response = await fetch(url,{
+                mode:  'cors' ,
+                method: 'POST',
+                headers:{
+                    'Content-Type': 'application/json'
+                }
+            },);
+          if (!response.ok) {
+            /// alert(`Response status: ${response.status}`);
+            throw new Error(`Response status: ${response.status}`);
+          } else {
+            alert(response.textContent);
+            outputDiv.textContent = response.text();
+            /// alert(response);
+            return outputDiv;
+          }
+        } catch (error) {
+          console.error(error.message);
+        }
+      }
+      </script>
+      <!--
+      <script>
+        fetch('https://f2d0-141-215-206-98.ngrok-free.app/hello')
+          .then(response => response.text())
+          .then(data => {
+            const outputDiv = document.getElementById('output');
+            outputDiv.textContent = data;
+          })
+          .catch(error => {
+            console.error('Error:', error);
+            const outputDiv = document.getElementById('output');
+          });
+      </script>
+      <p id="output"></pre>
+      -->
+        <p id="output"> added data</p>
+      </div>
+</body>
+</html>

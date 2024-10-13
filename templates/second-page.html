@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<!--
+	Stellar by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Generic - Stellar by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1>Generic</h1>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Content -->
+
+						<section id="content" class="main">
+							<!-- <h1>Ping Ngrok Server</h1>
+
+							<form id="dataForm">
+								<button type="button" onclick="getData()">Press to get server DATA</button>
+							</form> -->
+							<div id="answer"></div>
+							
+							<script>
+									async function getData() {
+
+										// const outputDiv = document.getElementById("").textContent;
+										// outputDiv.value = "you pressed the button";
+										/// const url = "https://f2d0-141-215-206-98.ngrok-free.app/hello";
+										//try {
+										//	const response = await fetch('fetcher.json', {
+										//		body: JSON.stringify({ answer }),
+										//	});
+											/*
+										  const response = await fetch(url,{
+												mode:  'cors' ,
+												method: 'POST',
+												headers:{
+													'Content-Type': 'application/json'
+												}
+											},); 
+										  if (!response.ok) {
+											alert(`Response status: ${response.status}`);
+											throw new Error(`Response status: ${response.status}`);
+											alert(`Response status: ${response.status}`)
+										  } else { */
+										//	const data = await response.json();
+                						//	outputDiv.textContent = data.answer;
+										  // } /// must be uncommented
+										//} catch (error) {
+										//  console.error(error.message);
+										//} 
+										  
+									  }
+									  const answerDiv = document.getElementById('answer');
+									  	try {
+													const data = await response.json();
+													answerDiv.textContent = data.answer;
+												} catch (error) {
+													console.error('Error:', error);
+													answerDiv.innerText = "An error occurred while fetching the answer.";
+												}
+											
+									  </script>
+								<!-- output area -->
+
+								
+							</section>
+
+					</div>
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

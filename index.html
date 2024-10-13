@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+<!--
+	Stellar by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Kiosk</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="icon" type="image/x-icon" href="/Users/nehabasugade/Downloads/Telemedicine_Kiosk/health-insurance.ico">
+		<user-media screenshare></user-media>
+
+		
+
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				
+					<header id="header" class="alt">
+						<h1>Telemedicine Kiosk</h1>
+					</header>
+
+				
+					<div id="main">
+
+						
+							<section id="intro" class="main">
+								<div class="spotlight">
+									<div class="content">
+										<header class="major">
+											<h2>Computer Input</h2>
+										</header>
+										<textarea name="" id="questionInput" placeholder="Your Query"></textarea>
+									</div>
+									
+								</div>
+								<div id="answer"></div>
+							</section>
+
+
+					</div>
+					<br>
+					
+
+					<div>
+						<button value="Next" id="submitButton" onclick=openWin()>Ask</button>
+					</div>
+
+				
+					<footer id="footer">
+						<section>
+							<dl class="alt">
+								<dt>Address</dt>
+								<dd>5217 heather drive USA</dd>
+								<dt>Phone</dt>
+								<dd>(000) 000-0000 x 0000</dd>
+								<dt>abc@umich.edu</dt>
+							</dl>
+							
+						</section>
+					</footer>
+
+			</div>
+			<script>
+		document.getElementById('submitButton').addEventListener('click', async () => {
+            
+
+			
+
+        //     try {
+        //         const response = await fetch('http://127.0.0.1:5000/query', {
+        //             method: 'POST',
+        //             headers: {
+        //                 'Content-Type': 'application/json',
+        //             },
+        //             body: JSON.stringify({ question }),
+        //         });
+
+        //         if (!response.ok) {
+        //             throw new Error(`HTTP error! status: ${response.status}`);
+        //         }
+
+        //         const data = await response.json();
+        //         answerDiv.textContent = data.answer;
+        //     } catch (error) {
+        //         console.error('Error:', error);
+        //         answerDiv.textContent = "An error occurred while fetching the answer.";
+        //     }
+        });
+		async function openWin(){
+			const question = document.getElementById('questionInput').value;
+            const answerDiv = document.getElementById('answer');
+            
+            if (!question) {
+                answerDiv.textContent = "Please enter a question.";
+                return;
+            }
+
+            answerDiv.textContent = "Loading...";
+
+			try {
+                const response = await fetch('http://127.0.0.1:5000/query', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ question }),
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const data = await response.json();
+                answerDiv.textContent = data.answer;
+            } catch (error) {
+                console.error('Error:', error);
+                answerDiv.textContent = "An error occurred while fetching the answer.";
+            }
+			
+		}
+			</script>
+		
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+			<script>
+				
+			</script>
+
+			
+	
+
+	</body>
+</html>

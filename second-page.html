@@ -41,9 +41,11 @@
 
 										const outputDiv = document.getElementById("output").value;
 										outputDiv.value = "you pressed the button";
-										const url = "https://f2d0-141-215-206-98.ngrok-free.app/hello";
+										/// const url = "https://f2d0-141-215-206-98.ngrok-free.app/hello";
 										try {
-											const response = await fetch('fetcher.json');
+											const response = await fetch('fetcher.json', {
+												body: JSON.stringify({ answer }),
+											});
 											/*
 										  const response = await fetch(url,{
 												mode:  'cors' ,
@@ -67,7 +69,7 @@
 									  }
 									  </script>
 								<!-- output area -->
-								 
+
 								<p id="output"> added data</p>
 							</section>
 

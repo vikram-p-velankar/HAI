@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Q&A</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        #questionInput {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        #submitButton {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #answer {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Document Q&A</h1>
+    <input type="text" id="questionInput" placeholder="Enter your question here">
+    <button id="submitButton">Ask</button>
+    <div id="answer"></div>
+
+    <script>
+        document.getElementById('submitButton').addEventListener('click', async () => {
+            const question = document.getElementById('questionInput').value;
+            const answerDiv = document.getElementById('answer');
+            
+            if (!question) {
+                answerDiv.textContent = "Please enter a question.";
+                return;
+            }
+
+            answerDiv.textContent = "Loading...";
+
+            try {
+                const response = await fetch('http://127.0.0.1:5000/query', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ question }),
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const data = await response.json();
+                answerDiv.textContent = data.answer;
+            } catch (error) {
+                console.error('Error:', error);
+                answerDiv.textContent = "An error occurred while fetching the answer.";
+            }
+        });
+    </script>
+</body>
+</html>

@@ -14,11 +14,14 @@
     </form>
     <script>
     async function getData() {
+      /*
         const input = document.getElementById("input").value; 
         alert(input);
         if(input.length = 0){
-          alert.(the);
+          alert("please enter a value");
+          return
         }
+      */
         const outputDiv = document.getElementById("output").value;
 
         const url = "https://f2d0-141-215-206-98.ngrok-free.app/hello";
@@ -34,7 +37,7 @@
             /// alert(`Response status: ${response.status}`);
             throw new Error(`Response status: ${response.status}`);
           } else {
-            alert(response.textContent);
+            alert(response.value );
             outputDiv.textContent = response.text();
             /// alert(response);
             return outputDiv;

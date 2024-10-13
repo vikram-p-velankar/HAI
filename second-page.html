@@ -40,29 +40,35 @@
 									async function getData() {
 
 										const outputDiv = document.getElementById("output").value;
+										outputDiv.value = "you pressed the button";
 										const url = "https://f2d0-141-215-206-98.ngrok-free.app/hello";
 										try {
+											const response = await fetch('fetcher.json');
+											/*
 										  const response = await fetch(url,{
 												mode:  'cors' ,
 												method: 'POST',
 												headers:{
 													'Content-Type': 'application/json'
 												}
-											},);
+											},); 
 										  if (!response.ok) {
 											alert(`Response status: ${response.status}`);
 											throw new Error(`Response status: ${response.status}`);
 											alert(`Response status: ${response.status}`)
-										  } else {
+										  } else { */
 											const data = await response.json();
                 							outputDiv.textContent = data.answer;
-										  }
+										  // } /// must be uncommented
 										} catch (error) {
 										  console.error(error.message);
-										}
+										} 
+										  
 									  }
 									  </script>
-									  <p id="output"> added data</p>
+								<!-- output area -->
+								 
+								<p id="output"> added data</p>
 							</section>
 
 					</div>

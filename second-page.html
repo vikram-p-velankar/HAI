@@ -12,7 +12,6 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
-	<body class="is-preload">
 
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -31,15 +30,15 @@
 						<section id="content" class="main">
 							<h1>Ping Ngrok Server</h1>
 
-      						<form action="javascript:getData()"> <!-- Replace with your Ngrok URL -->
-        						<!--<input type="text" id="input"> -->
-       					 		<button type="submit" value="submit">Press to get server DATA</button>
-    						</form>
-								
+							<form id="dataForm">
+								<button type="button" onclick="getData()">Press to get server DATA</button>
+							</form>
+							<div id="output"></div>
+							
 							<script>
 									async function getData() {
 
-										const outputDiv = document.getElementById("output").value;
+										const outputDiv = document.getElementById("output").textContent;
 										outputDiv.value = "you pressed the button";
 										/// const url = "https://f2d0-141-215-206-98.ngrok-free.app/hello";
 										try {
@@ -70,7 +69,7 @@
 									  </script>
 								<!-- output area -->
 
-								<p id="output"> added data</p>
+								
 							</section>
 
 					</div>

@@ -1,0 +1,7 @@
+langchain
+langchain_community
+chromadb
+flask
+flask_cors
+smtplib
+email

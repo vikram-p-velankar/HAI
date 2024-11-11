@@ -1,5 +1,6 @@
 # HAI
 Healthcare AI Model
+Utilizes Capabilities of Llama2 LLM and Langchain with RAG for summarization of the possiblity of Disease a patient has depending on his current symptoms.
 
 1. app.py is for flask server that serves as a backend for our telemedicine kiosk
 2. index.html serves as main web app page for the application

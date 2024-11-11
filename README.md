@@ -6,6 +6,19 @@ Healthcare AI Model
 3. STMP utilized for sending mail to the patient with probable medication and severity with the disease that the user is infected with.
 
 Requirements:-
+1. Ollama
+2. llama2
+3. nomic-embed-text
+4. ``flask, langchain, langchain_community, flask_cors, email, smtplib, chromadb``
+
+How to Use:-
 1. Install Ollama
-2. install all the requirements from requirements.txt
-3. run application using following command ``python app.py``
+2. ``ollama run llama2``
+3. Exit the llama2 model and the pull nomic-embed-text using ``ollama pull nomic-embed-text``
+4. Once done with the download rerun ``ollama run llama2``
+5. Navigate to the HAI folder ``cd ~/PATH/HAI-main``
+6. install all the requirements from requirements.txt
+7. run application using following command ``python app.py``
+8. Once server starts Open ``index.html`` from the directory on web Browser.
+9. Select any prompt from prompt.txt or any similar to context of provided prompts.
+10. Wait for model to work and you get all the information for disease a patient has.

@@ -26,3 +26,8 @@ How to Use:-
 
 
 # PROJECT WAS PART OF HACKDEARBORN-3 at UofM-DEARBORN
+Team Members:
+1. Vikram Velankar
+2. Neha Basugade
+3. Sai Arunanshu Govindarajula
+4. Alex Boccaccio

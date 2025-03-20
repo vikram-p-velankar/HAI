@@ -23,3 +23,6 @@ How to Use:-
 8. Once server starts Open ``index.html`` from the directory on web Browser.
 9. Select any prompt from ``prompt.txt`` or any similar to context of provided prompts.
 10. Wait for model to work and you get all the information for disease a patient has.
+
+
+# PROJECT WAS PART OF HACKDEARBORN-3 at UofM-DEARBORN
